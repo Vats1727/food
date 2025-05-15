@@ -1,29 +1,16 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose")
 
-const recipeSchema=mongoose.Schema({
-    title:{
-        type:String,
-        required:true
-    },
-    ingredients:{
-        type:Array,
-        required:true
-    },
-    instructions:{
-        type:String,
-        required:true
-    },
-    time:{
-        type:String,
-    },
-    coverImage:{
-        type:String,
-    },
-    createdBy:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
-    }
+const recipeSchema = mongoose.Schema({
+  title: { type: String, required: true },
+  ingredients: { type: Array, required: true },
+  instructions: { type: String, required: true },
+  time: { type: String },
+  coverImage: { type: String },
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  likes: {
+    type: Number,
+    default: 0
+  }
+}, { timestamps: true })
 
-},{timestamps:true})
-
-module.exports=mongoose.model("Recipes",recipeSchema)
+module.exports = mongoose.model("Recipes", recipeSchema)

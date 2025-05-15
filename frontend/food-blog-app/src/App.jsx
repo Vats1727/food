@@ -7,6 +7,8 @@ import axios from 'axios'
 import  AddFoodRecipe  from './pages/AddFoodRecipe'
 import EditRecipe from './pages/EditRecipe'
 import RecipeDetails from './pages/RecipeDetails'
+import AdminDashboard from './pages/AdminDashboard'
+
 
 
 const getAllRecipes=async()=>{
@@ -47,7 +49,9 @@ const router=createBrowserRouter([
     {path:"/favRecipe",element:<Home/>,loader:getFavRecipes},
     {path:"/addRecipe",element:<AddFoodRecipe/>},
     {path:"/editRecipe/:id",element:<EditRecipe/>},
-    {path:"/recipe/:id",element:<RecipeDetails/>,loader:getRecipe}
+    {path:"/recipe/:id",element:<RecipeDetails/>,loader:getRecipe},
+    { path: "/admin", element: <AdminDashboard /> }
+
   ]}
  
 ])

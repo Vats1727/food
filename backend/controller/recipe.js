@@ -20,8 +20,11 @@ const getRecipes=async(req,res)=>{
 
 const getRecipe=async(req,res)=>{
     const recipe=await Recipes.findById(req.params.id)
+    const recipes = await Recipes.find().sort({ likes: -1 })
     res.json(recipe)
 }
+
+
 
 const addRecipe=async(req,res)=>{
     console.log(req.user)

@@ -42,7 +42,9 @@ export default function AdminDashboard() {
 
   return (
     <div className='container'>
-      <h2>All Registered Users</h2>
+     <p> <h2 style={{ textAlign: "center" }}>All Registered Users</h2></p>
+    
+
       <table className='table' border="1" cellPadding="10" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
